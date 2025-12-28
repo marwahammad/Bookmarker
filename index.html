@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bookmark</title>
+    <link rel="shortcut icon" href="./assets/images/faviconV2.png" type="image/x-icon">
+    <!-- bootstrap -->
+     <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <main>
+        <div class="container text-center p-5">
+            <h1 id="main-headline">Bookmarker</h1>
+            <div class="bookmark-area m-5 p-3">
+                <h2><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
+                <!-- <form> -->
+                    <div class="mb-3 text-start">
+                      <label for="sitename" class="form-label fw-bolder"><i class="fa-solid fa-book-bookmark"></i> Site Name</label>
+                      <input type="text" class="form-control" id="sitename" placeholder="Bookmark Name" oninput="validationOfName()">
+                    </div>
+                    <div class="mb-3 text-start">
+                      <label for="siteurl" class="form-label fw-bolder"><i class="fa-solid fa-link"></i> Site URL</label>
+                      <input type="text" class="form-control" id="siteurl" placeholder="Website URL" oninput="validationOfUrl()">
+                    </div>
+                    <button type="submit" class="btn btn-submit px-5" onclick="addBookmark()">Submit</button>
+                  <!-- </form> -->
+            </div>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Index</th>
+                    <th scope="col">Website Name</th>
+                    <th scope="col">Visit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="table-content">
+           
+                </tbody>
+              </table>
+              <div id='back-layer' class="layer bg-black bg-opacity-50 position-absolute top-0 bottom-0 start-0 end-0 d-flex flex-column justify-content-center align-items-center " onclick="exitWindow()">
+                <div class="box bg-white p-5 text-start rounded-2">
+                <div class="header-icons d-flex justify-content-between align-items-center mb-4">
+                  <div class="circles">
+                    <span><i class="fa-solid fa-circle text-danger"></i></span>
+                    <span><i class="fa-solid fa-circle text-warning"></i></span>
+                    <span><i class="fa-solid fa-circle text-success"></i></span>
+                  </div>
+                  <button class="cross fs-4 bg-transparent border-0" onclick="exitWindow()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                  <p class="fw-bold">Site Name or Url is not valid, Please follow the rules below :</p>
+                  <ol class="list-unstyled">
+                    <li><i class="fa-regular fa-circle-right text-danger"></i><span>Site name must contain at least 3 characters
+                    </span></li>
+                    <li><i class="fa-regular fa-circle-right text-danger"></i><span>Site URL must be a valid one</span></li>
+                  </ol>
+                </div>
+              </div>
+        </div>
+    </main>
+    <script src="./assets/js/bootstrap.bundle.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
